@@ -11,13 +11,19 @@
     <div class="container">
 
         <h1>Registros da COVID-19</h1>
-        <p>Essa aplicação exibe o número de casos de COVID-19 reportados ao redor do mundo.</p>
+        <p>Esta aplicação exibe o número de casos de COVID-19 reportados ao redor do mundo.</p>
         <p ></p>
 
 
         <div class="jumbotron">
             <h1 class="display-4" th:text="${totalReportedCases}"></h1>
             <p class="lead">Número total de casos</p>
+            <hr class="my-4">
+            <p>
+                <span>Novos casos desde ontem:</span>
+                <span th:text="${totalNewCases}"></span>
+
+            </p>
         </div>
 
         <table class="table">
