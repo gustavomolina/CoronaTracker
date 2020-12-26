@@ -8,30 +8,33 @@
 </head>
 
 <body>
-<h1>Registros da COVID-19</h1>
-<p>Essa aplicação exibe o número de casos de COVID-19 reportados ao redor do mundo.</p>
-<p ></p>
+    <div class="container">
+
+        <h1>Registros da COVID-19</h1>
+        <p>Essa aplicação exibe o número de casos de COVID-19 reportados ao redor do mundo.</p>
+        <p ></p>
 
 
-<div class="jumbotron">
-    <h1 class="display-4" th:text="${totalReportedCases}"></h1>
-    <p class="lead">Número total de casos diários</p>
-</div>
+        <div class="jumbotron">
+            <h1 class="display-4" th:text="${totalReportedCases}"></h1>
+            <p class="lead">Número total de casos</p>
+        </div>
 
-<div class="container">
-    <table>
-        <tr>
-            <th>País</th>
-            <th>Estado</th>
-            <th>Casos Reportados</th>
-        </tr>
-        <tr th:each="locationStat : ${locationStats}">
-            <td th:text="${locationStat.country}"></td>
-            <td th:text="${locationStat.state}"></td>
-            <td th:text="${locationStat.latestTotalCases}">0</td>
-        </tr>
-    </table>
-</div>
+        <table class="table">
+            <tr>
+                <th>País</th>
+                <th>Estado</th>
+                <th>Casos Reportados</th>
+                <th>Aumento Diário</th>
+            </tr>
+            <tr th:each="locationStat : ${locationStats}">
+                <td th:text="${locationStat.country}"></td>
+                <td th:text="${locationStat.state}"></td>
+                <td th:text="${locationStat.latestTotalCases}">0</td>
+                <td th:text="${locationStat.diffFromPrevDay}">0</td>
+            </tr>
+        </table>
+    </div>
 
 </body>
 
